@@ -1,0 +1,582 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>ATAST</title>
+  <link rel="icon" href="{% static 'assets/img/atast2.png' %}" type="image/x-icon">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="ATAST">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendor.css ' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/style.css ' %}">
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik+Mono+One&display=swap"
+    rel="stylesheet">
+    <link href="{% static 'assets\css\style_gallery.css ' %}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css ' %}" rel="stylesheet">
+</head>
+<style>
+  body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+  }
+
+  a {
+    color: #ca2120;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #ca2120;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+    color: #ffffff; 
+
+  }
+
+
+    
+    .col-md-9{
+      display: flex;
+      justify-content: center;
+    }
+    /*--------------------------------------------------------------
+    # Header
+    --------------------------------------------------------------*/
+    #header {
+      transition: all 0.5s;
+      z-index: 997;
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.8);
+    
+    }
+    
+    #header.header-scrolled,
+    #header.header-inner-pages {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    #header .logo {
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+    }
+    
+    #header .logo a {
+      color: #fff;
+    }
+    
+    #header .logo a span {
+      color: #ca2120;
+    }
+    
+    #header .logo img {
+      max-height: 40px;
+    }
+    .get-started-btn {
+      background-color: #222222;
+      color: #fff;
+      border-radius: 4px;
+      padding: 7px 25px 8px 25px;
+      white-space: nowrap;
+      transition: 0.3s;
+      font-size: 14px;
+      display: inline-block;
+      border: 2px solid #ca2120;
+    }
+    
+    .get-started-btn:hover {
+      background: #ca2120;
+      color: #343a40;
+    }
+    
+    @media (max-width: 992px) {
+      .get-started-btn {
+        padding: 7px 20px 8px 20px;
+        margin-right: 15px;
+      }
+    }
+    .logo img {
+      max-width: 350px; /* Adjust the width as needed */
+      /*height: auto;  Maintain the aspect ratio */
+    }
+    
+    @media (min-width: 768px) {
+        .col-md-9 {
+            flex: 0 0 auto;
+            width: 100% !important; 
+            margin-top: 0px !important;
+
+        }
+    }
+    .mt-5{
+      margin-top: 0px !important;
+    }
+    .container-lg{
+        margin-top:calc(-1 * var(--bs-gutter-y));
+
+    }
+
+    .container_2{
+      margin-top: 15px;
+      display: flex;
+    }
+    .section-title{
+      color: #444444;
+    }
+    .m_title{
+      color: #ca2120;
+      display: flex;
+      justify-content: center;
+      font-size: 3rem;
+
+    }
+    .col-md-9{
+      margin-top: 5rem !important;
+
+    }
+    .club_card{
+      display: flex;
+      padding: 20px; 
+      margin: 20px;
+      border-radius: 20px;
+      border-style: solid;
+      border-width: 0.1px;
+      border-color: #444444
+      
+    }
+    .img-club{
+      max-width: 400px;
+      max-height:100%;
+      display: block;
+      margin: auto;
+    }
+    @media (max-width: 1250px) {
+      .club_card {
+        display: block;
+
+      }
+      .img-club{
+        margin-bottom: 20px;      }
+    }
+    @media (max-width: 650px) {
+      .club_card {
+        margin: 20px 0px;
+        justify-content: center;
+        padding: 20px 0px;
+      }
+      .img-club{
+        width: 90%;
+
+
+      }
+    }
+    </style>
+    <body>
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          loop: true,
+          speed: 1000,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+           breakpoints: {
+            320: {
+              slidesPerView: 1,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1200: {
+              slidesPerView: 4,
+            },
+          },
+        });
+        
+       
+        
+        
+       
+      </script>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+      <a href="" class="logo me-auto me-lg-0">
+        <div>
+        <img src="{% static 'assets/img/atast.png' %}" class="img-fluid" >
+        </div> 
+            <!-- Uncomment below if you prefer to use an image logo -->
+
+      </a>
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <a href="..\" class="get-started-btn scrollto">Home</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <section class="py-2">
+
+    <div class="container-lg">
+        <div class="col-md-9">
+            <div class="row">
+            <div class="col-md-12">
+                <h1 class="m_title">Our Clubs</h1>
+                <div class="section-header d-flex flex-wrap justify-content-between pb-2 mt-5 mt-lg-0" >
+
+                <h4 class="section-title" style="  text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing.</h4>
+
+
+            </div>
+
+            </div>
+        </div>
+      </div>
+      <div class="container_1" style=" display:flex; justify-content: center;">
+        <img src="{% static 'assets/img/news.jpg' %}"class="img-fluid" alt="">
+      </div>
+      <div class="container-lg1">
+        <div class="container-club">
+        <div class="club_card">
+          <img src="{% static 'assets\img\ksarhlel_club\22.jpg' %}"class="img-club" alt="ATAST Ksar Hellal">
+          <div style="margin-left: 20px;">
+            <h3 style="color: #ca2120;">ATAST Ksar Hellal Club</h3>
+            <dl>
+              <dt>When was ATAST Ksar Hellal made?</dt>
+              <dd>tempus odio. Suspendisse ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque nisi.</dd>
+              <dt>Can I join ATAST Ksar Hellal Club?</dt>
+              <dd>ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque tempus odio. Suspendisse tempus odio. Suspendisse nisi.</dd>
+              <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+
+                <a href="https://www.facebook.com/atast.ksarhelal" class="get-started-btn scrollto">Contact Us!</a>
+              </div>
+            </div>
+
+        </div>
+        <div class="club_card">
+          <img src="{% static 'assets\img\moknin_club\1.jpg' %}"class="img-club" alt="ATAST moknin_club">
+          <div style="margin-left: 20px;">
+            <h3 style="color: #ca2120;">ATAST Moknine Club</h3>
+            <dl>
+              <dt>When was ATAST Moknine made?</dt>
+              <dd>tempus odio. Suspendisse ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque nisi.</dd>
+              <dt>Can I join ATAST Moknine Club?</dt>
+              <dd>ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque tempus odio. Suspendisse tempus odio. Suspendisse nisi.</dd>
+              <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+
+                <a href="https://www.facebook.com/profile.php?id=100064846292216" class="get-started-btn scrollto">Contact Us!</a>
+              </div>
+            </div>
+
+        </div>
+          <div class="club_card">
+          <img src="{% static 'assets\img\monastir_club\33.jpg' %}"class="img-club" alt="ATAST monastir_club">
+          <div style="margin-left: 20px;">
+            <h3 style="color: #ca2120;">ATAST Monastir Club</h3>
+            <dl>
+              <dt>When was ATAST Monastir made?</dt>
+              <dd>tempus odio. Suspendisse ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque nisi.</dd>
+              <dt>Can I join ATAST Monastir Club?</dt>
+              <dd>ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque tempus odio. Suspendisse tempus odio. Suspendisse nisi.</dd>
+              <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+
+                <a href="https://www.facebook.com/ATAST.MONASTIR" class="get-started-btn scrollto">Contact Us!</a>
+              </div>
+            </div>
+
+        </div>
+        <div class="club_card">
+          <img src="{% static 'assets\img\sousse_club\sousse.jpg' %}"class="img-club" alt="ATAST Sousse">
+          <div style="margin-left: 20px;">
+            <h3 style="color: #ca2120;">Sousse Club</h3>
+            <dl>
+              <dt>When was ATAST Sousse made?</dt>
+              <dd>tempus odio. Suspendisse ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque nisi.</dd>
+              <dt>Can I join ATAST Sousse Club?</dt>
+              <dd>ipsum mi, cursus nec nisi viverra, suscipit scelerisque diam sem efficitur libero, ullamcorper porta purus est scelerisque tempus odio. Suspendisse tempus odio. Suspendisse nisi.</dd>
+              <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+
+                <a href="https://www.facebook.com/ClubAtastSousse" class="get-started-btn scrollto">Contact Us!</a>
+              </div>
+            </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- ======= Footer ======= -->
+    <style>
+          .get-started-btn {
+      background-color: #222222;
+      color: #fff;
+      border-radius: 4px;
+      padding: 7px 25px 8px 25px;
+      white-space: nowrap;
+      transition: 0.3s;
+      font-size: 14px;
+      display: inline-block;
+      border: 2px solid #ca2120;
+    }
+    
+    .get-started-btn:hover {
+      background: #ca2120;
+      color: #343a40;
+    }
+    
+    @media (max-width: 992px) {
+      .get-started-btn {
+        padding: 7px 20px 8px 20px;
+      }
+    }
+      #footer {
+    background: #000;
+    padding: 0px ;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  #footer .footer-top {
+    background: #151515;
+    border-bottom: 1px solid #222222;
+    padding: 60px 0 30px 0;
+  }
+  
+  #footer .footer-top .footer-info {
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-top .footer-info h3 {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  #footer .footer-top .footer-info h3 span {
+    color: #ca2120;
+  }
+  
+  #footer .footer-top .footer-info p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-family: "Raleway", sans-serif;
+    color: #fff;
+  }
+  
+  
+  #footer .footer-top h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  
+  #footer .footer-top .footer-links {
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: #ca2120;
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  #footer .footer-top .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  #footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0;
+  }
+  
+  #footer .footer-top .footer-links ul a {
+    color: #fff;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+  }
+  
+  #footer .footer-top .footer-links ul a:hover {
+    color: #ca2120;
+  }
+  
+  #footer .footer-top .footer-newsletter form {
+    margin-top: 30px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 4px;
+  }
+  
+  #footer .footer-top .footer-newsletter form input[type=email] {
+    border: 0;
+    padding: 4px;
+    width: calc(100% - 110px);
+  }
+  
+  #footer .footer-top .footer-newsletter form input[type=submit] {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    bottom: 0;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    padding: 0 20px;
+    background: #ca2120;
+    color: #151515;
+    transition: 0.3s;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  #footer .footer-top .footer-newsletter form input[type=submit]:hover {
+    background: #ca2120;
+  }
+  
+  #footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  #footer .credits {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+  }
+    </style>
+
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-info">
+                <h3>ATAST<span>.</span></h3>
+                <p>
+                  Av. Hadj Ali Soua <br>
+                  , Ksar Hellal 5070 TUN <br><br>
+                  <strong>Phone:</strong> +21629535631<br>
+                  <strong>Email:</strong> info.atast@gmail.com<br>
+                </p>
+  
+              </div>
+            </div>
+  
+  
+  
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our clubs</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/atast.ksarhelal">Ksar Hlel</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/profile.php?id=100064846292216">Moknine</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/ClubAtastSousse">Sousse</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/ATAST.MONASTIR">Monastir</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <img src="{% static 'assets/img/atast.png'  %}" class="img-fluid" alt="">
+
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>ATAST</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        </div>
+      </div>
+
+    </footer><!-- End Footer -->
+  
+  
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+  
+  </html>
+  </body>

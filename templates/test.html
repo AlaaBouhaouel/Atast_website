@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizontal Swipeable Gallery</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.gallery-container {
+  width: 100%;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  white-space: nowrap; /* Keep images in a single line */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+.gallery {
+  display: inline-flex; /* Display images in a row */
+}
+
+.photo {
+  flex: 0 0 auto; /* Prevent images from stretching */
+  margin-right: 10px; /* Spacing between images */
+  height: 100%; /* Ensure images fill gallery height */
+}
+
+.photo img {
+  max-width: 100%; /* Ensure images don't exceed container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+</style>
+<body>
+<div class="gallery-container">
+  <div class="gallery">
+    <div class="photo"><img src="static\assets\img\atast0.png" alt="Photo 1"></div>
+    <div class="photo"><img src="static\assets\img\ifest-bg.jpg" alt="Photo 2"></div>
+    <div class="photo"><img src="static\assets\img\makerspace.jpg" alt="Photo 3"></div>
+    <div class="photo"><img src="static\assets\img\spell0.jpg" alt="Photo 3"></div>
+    <div class="photo"><img src="static\assets\img\Xmind.jpg" alt="Photo 3"></div>
+    <div class="photo"><img src="static\assets\img\Xmind1.jpg" alt="Photo 3"></div>
+
+    <!-- Add more photos as needed -->
+  </div>
+</div>
+<script src="script.js"></script>
+<script>// Optional: Add swipe functionality using JavaScript
+  let startingX;
+  
+  document.querySelector('.gallery-container').addEventListener('touchstart', function(event) {
+    startingX = event.touches[0].clientX;
+  });
+  
+  document.querySelector('.gallery-container').addEventListener('touchend', function(event) {
+    let endingX = event.changedTouches[0].clientX;
+    let threshold = screen.width / 10; // Adjust as needed
+    
+    if (startingX - endingX > threshold) {
+      // Swipe left
+      document.querySelector('.gallery-container').scrollBy({
+        top: 0,
+        left: 300, // Adjust scroll distance
+        behavior: 'smooth'
+      });
+    } else if (endingX - startingX > threshold) {
+      // Swipe right
+      document.querySelector('.gallery-container').scrollBy({
+        top: 0,
+        left: -300, // Adjust scroll distance
+        behavior: 'smooth'
+      });
+    }
+  });
+  </script>
+</body>
+</html>
