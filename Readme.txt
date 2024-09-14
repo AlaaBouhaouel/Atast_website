@@ -1,6 +1,5 @@
 Hello! This is a modified premade boostrap template running with Django, 
-made by Ala Bouhaouel in 06/2024
-email: ellabouhaouel@gmail.com 
+
 
 to run this website locally :
 0.make sure you downloaded all the libraries and dependencies
